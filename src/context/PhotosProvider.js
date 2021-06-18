@@ -1,11 +1,5 @@
 import axios from "axios";
-import React, {
-  useState,
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../reducer/reducer";
 
 const createClient = axios.create({
@@ -63,7 +57,7 @@ const PhotosProvider = ({ children }) => {
     };
     fetchAPI();
   }, []);
-  console.log(photosData);
+
   return (
     <>
       <PhotosContext.Provider
