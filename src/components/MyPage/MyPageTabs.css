@@ -1,0 +1,21 @@
+.tabs-wrapper {
+  width: 100%;
+  border-top: 1px solid rgb(163, 163, 163);
+}
+
+.tabs {
+  width: 50%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.tab-box {
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

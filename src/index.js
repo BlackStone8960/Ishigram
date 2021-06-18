@@ -1,7 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import reportWebVitals from "./reportWebVitals";
-import AppRouter from "./router/AppRouter";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import reportWebVitals from './reportWebVitals';
+import AppRouter from './router/AppRouter';
+import './style.css';
 import PhotosProvider from "./context/PhotosProvider";
 
 ReactDOM.render(
