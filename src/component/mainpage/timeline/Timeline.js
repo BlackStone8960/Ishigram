@@ -1,5 +1,5 @@
 import React from "react";
-import { usePhotosContext } from "../../context/PhotosProvider";
+import { usePhotosContext } from "../../../context/PhotosProvider";
 import TimelineItem from "./TimelineItem";
 
 const Timeline = () => {

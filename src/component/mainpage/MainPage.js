@@ -1,6 +1,6 @@
 import React from "react";
-import Timeline from "./Timeline";
-import Users from "./Users";
+import Timeline from "./timeline/Timeline";
+import Users from "./users/Users";
 
 const MainPage = () => (
   <>
