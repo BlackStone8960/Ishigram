@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MainPage from '../components/MainPage';
 import MyPage from '../components/MyPage/MyPage';
