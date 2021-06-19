@@ -1,0 +1,34 @@
+.item-wrap {
+  width: 100%;
+  border: 1px solid rgba(233, 224, 224, 0.877);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.icon-wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  margin: 0 auto;
+  width: 90%;
+  align-self: center;
+}
+
+.photographer {
+  width: 90%;
+  margin: 0.5rem auto;
+}
+
+.comments-display {
+  width: 90%;
+  margin: 0.5rem auto;
+}
+
+.text-field {
+  margin-bottom: 1rem;
+  width: 80%;
+  margin: 0 auto
+}

@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+  width: 100%;
+}
+
+.timeline-container {
+  width: 80%;
+}
+
+.users-container {
+  width: 40%;
+}
+
+.main-user-wrap {
+  margin: 0 auto;
+}

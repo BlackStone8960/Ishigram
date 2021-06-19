@@ -1,0 +1,23 @@
+section {
+  width: 100%;
+}
+
+.main-user-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-user-icon {
+  border-radius: 50%;
+  width: 60px;
+  margin-right: 1.5rem;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.name {
+  color: gray;
+}
