@@ -69,6 +69,7 @@ const PhotosProvider = ({ children }) => {
       <PhotosContext.Provider
         value={{
           photosData,
+          dispatch
         }}
       >
         {children}
