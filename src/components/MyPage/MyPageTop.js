@@ -33,7 +33,6 @@ const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
   const onPhotoChange = async (e) => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
-      console.log(file);
       const photoDataUrl = await readFile(file);
       setPhotoURL(photoDataUrl);
       e.target.value = "";
@@ -54,6 +53,7 @@ const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
       },
       comments: []
     };
+    console.log(photoURL);
     dispatch({
       type: "ADD_PHOTO",
       payload: photoObj
@@ -63,6 +63,7 @@ const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
       payload: photoObj
     })
     handleClose();
+    setPhotoURL('');
   };
 
   useEffect(() => {
@@ -114,9 +115,9 @@ const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
           </div>
           { photoURL ? (
             <>
-              <div>
+              <div className="posted-img-wrapper">
                 <img src={photoURL} alt="posted-img" className="posted-img"></img>
-              </div> 
+              </div>
               <div className="posting-area-buttom">
                 <Button component="label" variant="contained" color="primary">
                   Select a photo
