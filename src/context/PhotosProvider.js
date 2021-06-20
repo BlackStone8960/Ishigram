@@ -12,27 +12,30 @@ const createClient = axios.create({
 const PhotosContext = createContext();
 const initialState = [];
 
-// photosData: [{}, {}, {}, {}]
-// {id: string src: string photographer: string isLiked: boolean comments: [] }
-
 const PhotosProvider = ({ children }) => {
   const [photosData, dispatch] = useReducer(reducer, initialState);
 
-  // const addPhoto = (newPhoto) => {
-  //   dispatch({ type: "ADD_PHOTO", payload: newPhoto });
-  // };
-
-  // const deletePhoto = (id) => {
-  //   dispatch({ type: "DELETE_PHOTO", payload: id });
-  // };
+  const getStoredCommentLikeData = (photosData) => {
+    photosData.forEach((photoData) => {
+      // if there is data of likes
+      if (localStorage.hasOwnProperty(`L-${photoData.id}`)) {
+        photoData.like = JSON.parse(localStorage.getItem(`L-${photoData.id}`));
+      }
+      // if therer is data of comments
+      if (localStorage.hasOwnProperty(`C-${photoData.id}`)) {
+        photoData.comments = JSON.parse(
+          localStorage.getItem(`C-${photoData.id}`)
+        );
+      }
+    });
+    return photosData;
+  };
 
   useEffect(() => {
     const fetchAPI = async () => {
       try {
         const res = await createClient.get("/v1/curated?page=2&per_page=40");
         const originalPhotos = res.data.photos;
-
-        // setPhotos(originalPhotos);
 
         const photosDataArr = [];
         originalPhotos &&
@@ -49,7 +52,24 @@ const PhotosProvider = ({ children }) => {
             photoDataObj.comments = [];
             photosDataArr.push(photoDataObj);
           });
-        dispatch({ type: "SET_PHOTO", payload: photosDataArr });
+
+        // if there is data of posted photos on localStorage, concat it to photosDataArr
+        if (localStorage.hasOwnProperty("user")) {
+          const photosDataArrPlusPostedPhotos = [
+            ...JSON.parse(localStorage.getItem("user")),
+            ...photosDataArr,
+          ];
+          dispatch({
+            type: "SET_PHOTO",
+            payload: getStoredCommentLikeData(photosDataArrPlusPostedPhotos),
+          });
+        } else {
+          dispatch({
+            type: "SET_PHOTO",
+            payload: getStoredCommentLikeData(photosDataArr),
+          });
+        }
+
         // console.log(photosDataArr);
       } catch (error) {
         console.log(`Oops, error!: ${error}`);

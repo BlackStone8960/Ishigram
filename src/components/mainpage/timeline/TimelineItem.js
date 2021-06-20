@@ -52,6 +52,7 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
         updates,
       },
     });
+    localStorage.setItem(`L-${id}`, JSON.stringify(updates.like));
   };
 
   const onRemoveLike = () => {
@@ -68,6 +69,7 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
         updates,
       },
     });
+    localStorage.removeItem(`L-${id}`);
   };
 
   const onAddNewComment = (id) => {
@@ -82,6 +84,7 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
       comments,
     };
     dispatch({ type: "EDIT_PHOTO", payload: { id, updates } });
+    localStorage.setItem(`C-${id}`, JSON.stringify(comments));
   };
 
   return (
