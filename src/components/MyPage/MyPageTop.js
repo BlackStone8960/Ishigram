@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MyPageTop.css';
+import '../../modal.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Button from '@material-ui/core/Button';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -17,7 +18,7 @@ const readFile = (file) => {
 
 const USER_NAME = "user";
 
-const MyPageTop = () => {
+const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
   const { dispatch } = usePhotosContext();
   const [photoURL, setPhotoURL] = useState("");
   const [open, setOpen] = useState(false);
@@ -57,12 +58,16 @@ const MyPageTop = () => {
       type: "ADD_PHOTO",
       payload: photoObj
     });
-    localStorage.setItem(USER_NAME, JSON.stringify(photoObj));
+    dispatchUsersPhoto({
+      type: 'ADD_USERS_PHOTOS',
+      payload: photoObj
+    })
     handleClose();
   };
+
   useEffect(() => {
-    console.log(photoURL);
-  }, [photoURL]);
+    usersPhoto.length !== 0 && localStorage.setItem(USER_NAME, JSON.stringify(usersPhoto));
+  }, [usersPhoto]);
 
   return (
     <div className="my-page-top">
@@ -82,6 +87,14 @@ const MyPageTop = () => {
               <SettingsIcon />
             </div>
           </div>
+          <ul className="info-counter">
+            <li><span>{usersPhoto.length} {usersPhoto.length === 1 ? "post" : "posts"}</span></li>
+            <li><span>200 followers</span></li>
+            <li><span>230 following</span></li>
+          </ul>
+          <div>
+            <p>Hello, world!</p>
+          </div>
         </div>
       </div>
       <div className="post-button">
@@ -99,20 +112,37 @@ const MyPageTop = () => {
           <div className="post-modal-title-wrapper">
             <h2 id="post-modal-title">New Post</h2>
           </div>
-          <div className="posting-area">
-            <Button component="label" variant="contained" color="primary">
-              Select a photo
-              <input 
-                type="file"
-                onChange={e => onPhotoChange(e)}
-                accept="image/*"
-                hidden
-              />
-            </Button>
-          </div>
-          <div>
-            <img src={photoURL} alt="posted-img"></img>
-          </div>
+          { photoURL ? (
+            <>
+              <div>
+                <img src={photoURL} alt="posted-img" className="posted-img"></img>
+              </div> 
+              <div className="posting-area-buttom">
+                <Button component="label" variant="contained" color="primary">
+                  Select a photo
+                  <input 
+                    type="file"
+                    onChange={e => onPhotoChange(e)}
+                    accept="image/*"
+                    hidden
+                  />
+                </Button> 
+              </div>
+            </>
+          ) : (
+            <div className="posting-area">
+              {/* Make this component later */}
+              <Button component="label" variant="contained" color="primary">
+                Select a photo
+                <input 
+                  type="file"
+                  onChange={e => onPhotoChange(e)}
+                  accept="image/*"
+                  hidden
+                />
+              </Button>
+            </div>
+          )}
           <div className="post-button">
             <Button
               variant="contained"
