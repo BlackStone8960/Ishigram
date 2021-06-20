@@ -8,6 +8,7 @@ export const reducer = (state, action) => {
     case "EDIT_PHOTO":
       return state.map((photoData) => {
         if (photoData.id === action.payload.id) {
+          console.log("reducer worked");
           return { ...photoData, ...action.payload.updates };
         } else {
           return photoData;

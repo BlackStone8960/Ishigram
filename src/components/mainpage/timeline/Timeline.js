@@ -6,6 +6,8 @@ import "./Timeline.css";
 const Timeline = () => {
   const { photosData } = usePhotosContext();
 
+  console.log(photosData);
+
   return (
     photosData && (
       <section className="timeline-container">

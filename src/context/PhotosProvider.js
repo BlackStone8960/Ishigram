@@ -50,7 +50,7 @@ const PhotosProvider = ({ children }) => {
             photosDataArr.push(photoDataObj);
           });
         dispatch({ type: "SET_PHOTO", payload: photosDataArr });
-        console.log(photosDataArr);
+        // console.log(photosDataArr);
       } catch (error) {
         console.log(`Oops, error!: ${error}`);
       }

@@ -9,6 +9,12 @@
 .icon-wrap {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+}
+
+.num-of-likes {
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
 }
 
 img {
@@ -27,8 +33,7 @@ img {
   margin: 0.5rem auto;
 }
 
-.text-field {
-  margin-bottom: 1rem;
-  width: 80%;
-  margin: 0 auto
+.form {
+  display: flex;
+  align-items: center;
 }
