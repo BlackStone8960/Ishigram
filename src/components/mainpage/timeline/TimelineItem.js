@@ -36,9 +36,9 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
   const classes = useStyles();
   const { dispatch } = usePhotosContext();
   const [newComment, setNewComment] = useState("");
+  const [moreComments, setMoreComments] = useState(false);
 
   const onAddlike = (id) => {
-    console.log("clicked");
     const updates = {
       like: {
         isLiked: true,
@@ -87,10 +87,18 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
     localStorage.setItem(`C-${id}`, JSON.stringify(comments));
   };
 
+  const showMoreComments = () => {
+    setMoreComments(true);
+  };
+
+  const showLessComments = () => {
+    setMoreComments(false);
+  };
+
   return (
     <div className="item-wrap">
       <img src={src.large} alt={photographer} />
-      <p className="photographer">{photographer}</p>
+      <p className="photographer">Photographer: {photographer}</p>
       <div className="icon-wrap">
         <div className="fav-icon-wrap">
           {like.isLiked ? (
@@ -113,9 +121,15 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
       </div>
       <div className="comments-display">
         {comments.length !== 0 ? (
-          comments.map((comment) => (
-            <p key={comment.commentUid}>
-              {" "}
+          comments.map((comment, index) => (
+            <p
+              style={
+                index >= 1 && !moreComments
+                  ? { display: "none" }
+                  : { display: "initial" }
+              }
+              key={comment.commentUid}
+            >
               <span>
                 <b>{comment.user}</b>
               </span>{" "}
@@ -123,9 +137,20 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
             </p>
           ))
         ) : (
-          <p style={{ color: "gray" }}>No comments yet</p>
+          <p className="no-comments-yet">No comments yet</p>
         )}
       </div>
+      {comments.length <= 1 && !moreComments ? (
+        ""
+      ) : comments.length > 1 && !moreComments ? (
+        <div onClick={() => showMoreComments()} className="showMoreLessBtn">
+          Show more
+        </div>
+      ) : (
+        <div onClick={() => showLessComments()} className="showMoreLessBtn">
+          Show less
+        </div>
+      )}
       <form className={`${classes.root} form`} noValidate autoComplete="off">
         <TextField
           className="standard-basic"

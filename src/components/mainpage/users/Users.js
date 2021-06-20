@@ -13,15 +13,11 @@ const Users = () => (
           <p className=" name">Taishi</p>
         </div>
       </div>
-      <a className="accout-switch-link" href="#">
-        Switch Account
-      </a>
+      <p className="accout-switch-link">Switch Account</p>
     </div>
     <div className="users-list-titles">
       <p className="ppl-may-know">People you may know</p>
-      <a className="view-all" href="#">
-        View all
-      </a>
+      <p className="view-all">View all</p>
     </div>
     <div className="users-wrap">
       {usersData.map((user) => (
@@ -39,9 +35,7 @@ const Users = () => (
               <p className="name">{user.name}</p>
             </div>
           </div>
-          <a className="follow-link" href="#">
-            Follow
-          </a>
+          <p className="follow-link">Follow</p>
         </div>
       ))}
     </div>
