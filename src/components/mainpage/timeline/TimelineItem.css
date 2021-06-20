@@ -30,7 +30,22 @@ img {
 
 .comments-display {
   width: 90%;
-  margin: 0.5rem auto;
+  margin: 0.5rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-comments-yet {
+  color: gray;
+}
+
+.showMoreLessBtn {
+  width: 90%;
+  margin: 0 auto;
+  color: gray;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .form {

@@ -26,6 +26,7 @@ section {
 .view-all {
   float: right;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .user-wrap {
@@ -60,9 +61,10 @@ section {
   font-weight: bold;
   font-size: 0.8rem;
   margin-left: 1.5rem;
+  cursor: pointer;
 }
 
-.accout-switch-link:hover {
+/* .accout-switch-link:hover {
   color: rgb(46, 152, 252);
 }
 
@@ -76,4 +78,4 @@ section {
 
 .follow-link:visited {
   color: rgb(46, 152, 252);
-}
+} */
