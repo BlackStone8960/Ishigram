@@ -72,7 +72,7 @@
 
 .posted-img {
 	max-width: 50%;
-	min-height: 500px;
+	max-height: 500px;
 }
 
 .posted-img-wrapper {
