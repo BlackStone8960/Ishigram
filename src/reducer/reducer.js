@@ -1,7 +1,7 @@
 export const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_PHOTO":
-      return [...state, action.payload];
+      return [action.payload, ...state];
     // [ {}, {}, {} ]
     case "DELETE_PHOTO":
       return state.filter(({ id }) => id !== action.payload);

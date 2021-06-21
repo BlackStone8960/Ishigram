@@ -63,7 +63,6 @@ const PhotoBox = ({ photo }) => {
               <div className="comment-area">
                 <div></div>
               </div>
-              
             </div>
           </div>
         </div>

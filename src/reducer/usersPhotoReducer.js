@@ -4,8 +4,8 @@ const usersPhotoReducer = (state, action) => {
       return action.payload;
     case 'ADD_USERS_PHOTOS':
       return [
-        ...state,
-        action.payload
+        action.payload,
+        ...state
       ]
     default:
       return state;

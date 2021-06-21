@@ -46,7 +46,7 @@ const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
         large: photoURL
       },
       id: uuid(),
-      photoGrapher: USER_NAME,
+      photographer: USER_NAME,
       like: {
         isLiked: false,
         numOfLikes: 0
