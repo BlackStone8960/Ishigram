@@ -22,9 +22,12 @@ const MyPage = () => {
         dispatchUsersPhoto={dispatchUsersPhoto}
       />
       <MyPageTabs />
-      <MyPageAlbum usersPhoto={usersPhoto} />
+      <MyPageAlbum
+        usersPhoto={usersPhoto}
+        dispatchUsersPhoto={dispatchUsersPhoto}
+      />
     </div>
   );
 }
-
+// Make context object later
 export default MyPage;
