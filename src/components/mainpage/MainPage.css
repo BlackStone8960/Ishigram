@@ -1,14 +1,15 @@
 .main-container {
-  display: flex;
   width: 100%;
 }
 
 .timeline-container {
-  width: 80%;
+  width: 75%;
 }
 
 .users-container {
-  width: 40%;
+  position: fixed;
+  top: 13%;
+  left: 65%;
 }
 
 .main-user-wrap {
