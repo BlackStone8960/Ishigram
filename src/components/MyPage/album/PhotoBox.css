@@ -80,6 +80,55 @@
 .comment-area {
 	height: 224px;
 	width: 100%;
+	padding: 16px 12px;
 	overflow: scroll;
 	white-space: normal;
+	/* IE, Edge 対応 */
+	-ms-overflow-style: none;
+	/* Firefox 対応 */
+	scrollbar-width: none;
+	border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+/* Chrome, Safari 対応 */
+.comment-area::-webkit-scrollbar {
+	display: none;
+}
+
+.user-name {
+	margin-left: 14px;
+	font-size: 16px;
+}
+.comment-sentence {
+	margin-left: 4px;
+}
+.icon-area {
+	margin-top: 4px;
+	padding: 4px 16px;
+	border-bottom: 1px solid rgb(163, 163, 163);
+}
+.icon-left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.icon-container {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.icon-box {
+	cursor: pointer;
+	padding: 8px;
+}
+.like-text {
+	font-size: 16px;
+}
+.add-comment-form {
+	padding: 0 16px;
+	margin-top: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

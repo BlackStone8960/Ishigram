@@ -7,6 +7,14 @@ const usersPhotoReducer = (state, action) => {
         action.payload,
         ...state
       ]
+    case "EDIT_USERS_PHOTO":
+      return state.map((photoData) => {
+        if (photoData.id === action.payload.id) {
+          return { ...photoData, ...action.payload.updates };
+        } else {
+          return photoData;
+        }
+      });
     default:
       return state;
   }

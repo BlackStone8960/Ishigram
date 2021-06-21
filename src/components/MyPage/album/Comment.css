@@ -1,0 +1,14 @@
+.comment-wrapper {
+	display: flex;
+	flex-flow: row;
+	justify-content: left;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.user-sentence {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: left;
+	align-items: center;
+}
