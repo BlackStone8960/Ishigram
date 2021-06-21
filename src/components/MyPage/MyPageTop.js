@@ -1,24 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MyPageTop.css';
+import '../../modal.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Button from '@material-ui/core/Button';
 import SettingsIcon from '@material-ui/icons/Settings';
 import Modal from '@material-ui/core/Modal';
+import { v4 as uuid } from 'uuid';
+import { usePhotosContext } from '../../context/PhotosProvider';
 
-const MyPageTop = () => {
+const readFile = (file) => {
+  return new Promise(resolve => {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => resolve(reader.result), false);
+    reader.readAsDataURL(file);
+  })
+}
+
+const USER_NAME = "user";
+
+const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
+  const { dispatch } = usePhotosContext();
+  const [photoURL, setPhotoURL] = useState("");
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   }
 
-  const onPhotoChange = () => {
-    handleClose();
+  const onPhotoChange = async (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const file = e.target.files[0];
+      const photoDataUrl = await readFile(file);
+      setPhotoURL(photoDataUrl);
+      e.target.value = "";
+    }
   }
+
+  const onPostPhoto = () => {
+    const photoObj = {
+      src: {
+        medium: photoURL,
+        large: photoURL
+      },
+      id: uuid(),
+      photoGrapher: USER_NAME,
+      like: {
+        isLiked: false,
+        numOfLikes: 0
+      },
+      comments: []
+    };
+    console.log(photoURL);
+    dispatch({
+      type: "ADD_PHOTO",
+      payload: photoObj
+    });
+    dispatchUsersPhoto({
+      type: 'ADD_USERS_PHOTOS',
+      payload: photoObj
+    })
+    handleClose();
+    setPhotoURL('');
+  };
+
+  useEffect(() => {
+    usersPhoto.length !== 0 && localStorage.setItem(USER_NAME, JSON.stringify(usersPhoto));
+  }, [usersPhoto]);
 
   return (
     <div className="my-page-top">
@@ -38,6 +88,14 @@ const MyPageTop = () => {
               <SettingsIcon />
             </div>
           </div>
+          <ul className="info-counter">
+            <li><span>{usersPhoto.length} {usersPhoto.length === 1 ? "post" : "posts"}</span></li>
+            <li><span>200 followers</span></li>
+            <li><span>230 following</span></li>
+          </ul>
+          <div>
+            <p>Hello, world!</p>
+          </div>
         </div>
       </div>
       <div className="post-button">
@@ -55,15 +113,44 @@ const MyPageTop = () => {
           <div className="post-modal-title-wrapper">
             <h2 id="post-modal-title">New Post</h2>
           </div>
-          <div className="posting-area">
-            <Button component="label" variant="contained" color="primary">
-              Post a photo
-              <input 
-                type="file"
-                onChange={onPhotoChange}
-                accept="image/*"
-                hidden
-              />
+          { photoURL ? (
+            <>
+              <div className="posted-img-wrapper">
+                <img src={photoURL} alt="posted-img" className="posted-img"></img>
+              </div>
+              <div className="posting-area-buttom">
+                <Button component="label" variant="contained" color="primary">
+                  Select a photo
+                  <input 
+                    type="file"
+                    onChange={e => onPhotoChange(e)}
+                    accept="image/*"
+                    hidden
+                  />
+                </Button> 
+              </div>
+            </>
+          ) : (
+            <div className="posting-area">
+              {/* Make this component later */}
+              <Button component="label" variant="contained" color="primary">
+                Select a photo
+                <input 
+                  type="file"
+                  onChange={e => onPhotoChange(e)}
+                  accept="image/*"
+                  hidden
+                />
+              </Button>
+            </div>
+          )}
+          <div className="post-button">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={onPostPhoto}
+            >
+              Post
             </Button>
           </div>
         </div>
