@@ -7,7 +7,7 @@
 
 # Introduction
 
-This is a copy app of Instagram built with React. You can post photos, view them in the feed, add likes or comments. You can also view photos provided by [Pexels](https://www.pexels.com/api/).
+This is a copy app of [Instagram](https://www.instagram.com/) built with React. You can post photos, view them in the feed, add likes or comments. You can also view photos provided by [Pexels](https://www.pexels.com/api/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -35,12 +35,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Miyabi Tanimichi coded & was in charge of following parts:
 
-• Main page (Feed)
-• Fetching data from Pexels API
+• Main page (Feed) <br/>
+• Fetching data from Pexels API <br/>
 • Managing photo data using context API & reducer
 
 ### Taichi Ishiguro coded & was in charge of following parts:
 
 • User's page (including implementing function of posting photos) <br/>
-• Managing photo data using reducer <br/>
-• Saving data to local storage
+• Managing photo data using reducer & local storage <br/>
