@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# Social media app built with React
+
+<br/>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60183777/122874672-37258080-d36e-11eb-8f34-4447a33e73c3.gif" /><br>
+</p>
+
+# Introduction
+
+This is a copy app of Instagram built with React. You can post photos, view them in the feed, add likes or comments. You can also view photos provided by [Pexels](https://www.pexels.com/api/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -11,60 +20,27 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Built with
 
-### `yarn test`
+• React <br/>
+• Material UI <br/>
+• [Pexels](https://www.pexels.com/api/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Author
 
-### `yarn build`
+[Miyabi Tanimichi](https://github.com/miyabitanimchi)<br/>
+[Taichi Ishiguro](https://github.com/BlackStone8960)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Roles in this project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Miyabi Tanimichi coded & was in charge of following parts:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+• Main page (Feed)
+• Fetching data from Pexels API
+• Managing photo data using context API & reducer
 
-### `yarn eject`
+### Taichi Ishiguro coded & was in charge of following parts:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+• User's page (including implementing function of posting photos) <br/>
+• Managing photo data using reducer <br/>
+• Saving data to local storage

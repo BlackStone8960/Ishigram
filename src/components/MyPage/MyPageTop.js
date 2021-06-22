@@ -53,7 +53,6 @@ const MyPageTop = ({ usersPhoto, dispatchUsersPhoto }) => {
       },
       comments: []
     };
-    console.log(photoURL);
     dispatch({
       type: "ADD_PHOTO",
       payload: photoObj
