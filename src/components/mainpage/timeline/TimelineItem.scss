@@ -1,0 +1,60 @@
+@import "../../../styles/mediaQuery";
+
+.item-wrap {
+	width: 100%;
+	border: 1px solid rgba(233, 224, 224, 0.877);
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.5rem;
+
+	@include mq(mobile) {
+		border: none;
+	}
+}
+
+.icon-wrap {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+}
+
+.num-of-likes {
+	font-size: 0.9rem;
+	padding-left: 0.5rem;
+}
+
+img {
+	margin: 0 auto;
+	width: 90%;
+	align-self: center;
+}
+
+.photographer {
+	width: 90%;
+	margin: 0.5rem auto;
+}
+
+.comments-display {
+	width: 90%;
+	margin: 0.5rem auto 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.no-comments-yet {
+	color: gray;
+}
+
+.showMoreLessBtn {
+	width: 90%;
+	margin: 0 auto;
+	color: gray;
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+.form {
+	display: flex;
+	align-items: center;
+}
