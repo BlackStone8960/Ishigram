@@ -8,8 +8,6 @@ import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import ExploreOutlinedIcon from "@material-ui/icons/ExploreOutlined";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import AppsIcon from '@material-ui/icons/Apps';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const Header = () => {
   const [search, setSearch] = useState("");
@@ -21,57 +19,50 @@ const Header = () => {
   }, [location])
 
   return (
-    <header className="header">
-      <div className="header-wrapper">
-        <MediaQuery query="(max-width: 480px)">
+    <>
+      <MediaQuery query="(max-width: 480px)">
         {
-          isMypage ? (
-            <>
-              <div className="header-userID-wrapper">
-                <div className="header-userID">
-                  <span className="header-userID-span">User ID</span>
-                  <KeyboardArrowDownIcon />
-                </div>
+          !isMypage && (
+            <header className="header">
+              <div className="header-wrapper">
+                <CameraAltOutlinedIcon style={{ fontSize: 40 }} />
+                <Link to="/">
+                  <div className="header-logo">Ishigram</div>
+                </Link>
+                <SendOutlinedIcon style={{ fontSize: 40 }} />
               </div>
-              <AppsIcon style={{ fontSize: 40 }} />
-            </>
-          ) :
-          (
-            <>
-              <CameraAltOutlinedIcon style={{ fontSize: 40 }} />
-              <Link to="/">
-                <div className="header-logo">Ishigram</div>
-              </Link>
-              <SendOutlinedIcon style={{ fontSize: 40 }} />
-            </>
+            </header>
           )
         }
-        </MediaQuery> 
-        <MediaQuery query="(min-width: 481px)">
-          <Link to="/">
-            <div className="header-logo">Ishigram</div>
-          </Link>
-          <input
-            className="header-search-box"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            type="search"
-            placeholder="Search"
-          />
-          <div className="header-icons">
+      </MediaQuery> 
+      <MediaQuery query="(min-width: 481px)">
+        <header className="header">
+          <div className="header-wrapper">
             <Link to="/">
-              <HomeOutlinedIcon fontSize="large" />
+              <div className="header-logo">Ishigram</div>
             </Link>
-            <SendOutlinedIcon fontSize="large" />
-            <ExploreOutlinedIcon fontSize="large" />
-            <FavoriteBorderIcon fontSize="large" />
-            <Link to="/mypage">
-              <AccountCircleIcon fontSize="large" />
-            </Link>
+            <input
+              className="header-search-box"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              type="search"
+              placeholder="Search"
+            />
+            <div className="header-icons">
+              <Link to="/">
+                <HomeOutlinedIcon fontSize="large" />
+              </Link>
+              <SendOutlinedIcon fontSize="large" />
+              <ExploreOutlinedIcon fontSize="large" />
+              <FavoriteBorderIcon fontSize="large" />
+              <Link to="/mypage">
+                <AccountCircleIcon fontSize="large" />
+              </Link>
+            </div>
           </div>
-        </MediaQuery>
-      </div>
-    </header>
+        </header>
+      </MediaQuery>
+    </>
   );
 };
 

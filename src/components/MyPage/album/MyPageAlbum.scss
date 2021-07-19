@@ -1,0 +1,12 @@
+.album-container {
+	// display: flex;
+	// justify-content: center;
+	// align-items: flex-start;
+
+	.ambum-wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: left;
+	}
+}

@@ -15,7 +15,8 @@
 .users-container {
 	position: fixed;
 	top: 85px;
-	left: 65%;
+	// left: 65%;
+	right: 10vw;
 
 	@include mq(tablet) {
 		display: none;

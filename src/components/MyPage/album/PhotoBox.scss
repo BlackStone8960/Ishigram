@@ -1,3 +1,5 @@
+@import "../../../styles/mediaQuery";
+
 .photo-box {
 	width: 100%;
 	cursor: pointer;
@@ -12,6 +14,11 @@
 	width: 30%;
 	margin-right: 5%;
 	z-index: 10;
+
+	@include mq(mobile) {
+		width: 33.33%;
+		margin-right: 0;
+	}
 }
 .photo-box-wrapper:nth-of-type(3n) {
 	margin-right: 0;

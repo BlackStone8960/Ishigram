@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './PhotoBox.css';
+import './PhotoBox.scss';
 import Modal from '@material-ui/core/Modal';
 import '../../../modal.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
