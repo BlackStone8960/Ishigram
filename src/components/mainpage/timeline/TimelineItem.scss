@@ -10,6 +10,27 @@
 	@include mq(mobile) {
 		border: none;
 	}
+
+	.item-photo-wrapper {
+		@include mq(mobile) {
+			margin-right: calc(50% - 50vw);
+			margin-left: calc(50% - 50vw);
+		}
+
+		.item-photo {
+			margin: 0 auto;
+			width: 90%;
+			align-self: center;
+
+			@include mq(mobile) {
+				display: block;
+				width: 100%;
+				height: auto;
+				margin: 0;
+				align-self: unset;
+			}
+		}
+	}
 }
 
 .icon-wrap {
@@ -21,12 +42,6 @@
 .num-of-likes {
 	font-size: 0.9rem;
 	padding-left: 0.5rem;
-}
-
-img {
-	margin: 0 auto;
-	width: 90%;
-	align-self: center;
 }
 
 .photographer {
