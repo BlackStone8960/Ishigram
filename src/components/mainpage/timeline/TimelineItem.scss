@@ -12,6 +12,8 @@
 	}
 
 	.item-photo-wrapper {
+		text-align: center;
+
 		@include mq(mobile) {
 			margin-right: calc(50% - 50vw);
 			margin-left: calc(50% - 50vw);
