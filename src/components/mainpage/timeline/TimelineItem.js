@@ -10,7 +10,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 
-import "./TimelineItem.css";
+import "./TimelineItem.scss";
 
 // Material-UI
 const useStyles = makeStyles((theme) => ({
@@ -97,7 +97,9 @@ const TimelineItem = ({ id, photographer, src, like, comments }) => {
 
   return (
     <div className="item-wrap">
-      <img src={src.large} alt={photographer} />
+      <div className="item-photo-wrapper">
+        <img src={src.large} alt={photographer} className="item-photo" />
+      </div>
       <p className="photographer">Photographer: {photographer}</p>
       <div className="icon-wrap">
         <div className="fav-icon-wrap">

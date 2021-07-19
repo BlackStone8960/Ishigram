@@ -1,66 +1,66 @@
-section {
-  width: 100%;
+.main-user-container {
+	width: 100%;
 }
 
 .main-user-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 3rem;
 }
 
 .users-list-titles {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
 }
 
 .ppl-may-know {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  color: gray;
-  margin-left: 0.2rem;
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem;
+	color: gray;
+	margin-left: 0.2rem;
 }
 
 .view-all {
-  float: right;
-  font-size: 0.9rem;
-  cursor: pointer;
+	float: right;
+	font-size: 0.9rem;
+	cursor: pointer;
 }
 
 .user-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .main-user-icon {
-  border-radius: 50%;
-  width: 60px;
-  margin-right: 1.3rem;
+	border-radius: 50%;
+	width: 60px;
+	margin-right: 1.3rem;
 }
 
 .icon-name-wrap {
-  display: flex;
+	display: flex;
 }
 
 .username {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .name {
-  color: gray;
+	color: gray;
 }
 
 .accout-switch-link,
 .follow-link {
-  color: rgb(46, 152, 252);
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin-left: 1.5rem;
-  cursor: pointer;
+	color: rgb(46, 152, 252);
+	font-weight: bold;
+	font-size: 0.8rem;
+	margin-left: 1.5rem;
+	cursor: pointer;
 }
 
 /* .accout-switch-link:hover {

@@ -1,6 +1,6 @@
 import React from 'react';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import './Comment.css';
+import './Comment.scss';
 
 const Comment = ({ comment }) => (
   <div className="comment-wrapper">

@@ -1,0 +1,32 @@
+@import "../../styles/mediaQuery";
+
+.tabs-wrapper {
+	width: 100%;
+	border-top: 1px solid rgb(163, 163, 163);
+
+	@include mq(mobile) {
+		padding: 8px 0;
+		border: none;
+	}
+}
+
+.tabs {
+	width: 50%;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+
+	@include mq(mobile) {
+		width: 64%;
+	}
+}
+
+.tab-box {
+	height: 53px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}

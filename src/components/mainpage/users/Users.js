@@ -4,7 +4,7 @@ import "./Users.css";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 const Users = () => (
-  <section>
+  <section className="main-user-container">
     <div className="main-user-wrap">
       <div className="icon-name-wrap">
         <img className="main-user-icon" src="./takosan.jpeg" alt="tako" />
